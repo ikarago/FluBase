@@ -1,10 +1,9 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 
 using FluBase.Helpers;
 using FluBase.Services;
 
-using Windows.ApplicationModel;
 using Windows.UI.Xaml;
 
 namespace FluBase.ViewModels
@@ -12,8 +11,10 @@ namespace FluBase.ViewModels
     // TODO WTS: Add other settings as necessary. For help see https://github.com/Microsoft/WindowsTemplateStudio/blob/master/docs/pages/settings.md
     public class SettingsViewModel : Observable
     {
-        private ElementTheme _elementTheme = ThemeSelectorService.Theme;
+        // Properties
+        private bool _hasInstanceBeenInitialized = false;
 
+        private ElementTheme _elementTheme = ThemeSelectorService.Theme;
         public ElementTheme ElementTheme
         {
             get { return _elementTheme; }
@@ -22,7 +23,6 @@ namespace FluBase.ViewModels
         }
 
         private string _versionDescription;
-
         public string VersionDescription
         {
             get { return _versionDescription; }
@@ -30,8 +30,22 @@ namespace FluBase.ViewModels
             set { Set(ref _versionDescription, value); }
         }
 
-        private ICommand _switchThemeCommand;
 
+        // Constructor
+        public SettingsViewModel()
+        {
+            Initialize();
+        }
+
+        // Initialize
+        public void Initialize()
+        {
+            // Empty... for now :)
+        }
+
+
+        // Commands
+        private ICommand _switchThemeCommand;
         public ICommand SwitchThemeCommand
         {
             get
@@ -50,23 +64,16 @@ namespace FluBase.ViewModels
             }
         }
 
-        public SettingsViewModel()
-        {
-        }
 
-        public void Initialize()
+        // Methods
+        public async Task EnsureInstanceInitializedAsync()
         {
-            VersionDescription = GetVersionDescription();
-        }
+            if (!_hasInstanceBeenInitialized)
+            {
+                Initialize();
 
-        private string GetVersionDescription()
-        {
-            var appName = "AppDisplayName".GetLocalized();
-            var package = Package.Current;
-            var packageId = package.Id;
-            var version = packageId.Version;
-
-            return $"{appName} - {version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
+                _hasInstanceBeenInitialized = true;
+            }
         }
     }
 }

@@ -149,31 +149,31 @@
     <value>Light</value>
     <comment>Light theme text for Settings</comment>
   </data>
-  <data name="Settings_About.Text" xml:space="preserve">    
+  <data name="Settings_About.Text" xml:space="preserve">
     <value>About this application</value>
     <comment>About this application title for Settings</comment>
   </data>
-  <data name="Settings_AboutDescription.Text" xml:space="preserve">    
+  <data name="Settings_AboutDescription.Text" xml:space="preserve">
     <value>Settings page placeholder text.  Your app description goes here.</value>
     <comment>About this application description for Settings</comment>
   </data>
-  <data name="Settings_PrivacyTermsLink.Content" xml:space="preserve">    
+  <data name="Settings_PrivacyTermsLink.Content" xml:space="preserve">
     <value>Privacy Statement</value>
     <comment>Privacy Statement link content for Settings</comment>
   </data>
-  <data name="Settings_PrivacyTermsLink.NavigateUri" xml:space="preserve">  
+  <data name="Settings_PrivacyTermsLink.NavigateUri" xml:space="preserve">
     <value>https://YourPrivacyUrlGoesHere/</value>
     <comment>Here is your Privacy Statement url for Settings</comment>
   </data>
-  <data name="Settings_Personalization.Text" xml:space="preserve">   
+  <data name="Settings_Personalization.Text" xml:space="preserve">
     <value>Personalization</value>
     <comment>Personalization text for Settings</comment>
   </data>
-  <data name="ExceptionEnumToBooleanConverterValueMustBeAnEnum" xml:space="preserve">   
+  <data name="ExceptionEnumToBooleanConverterValueMustBeAnEnum" xml:space="preserve">
     <value>value must be an Enum!</value>
     <comment>Value must be an Enum in enum to boolean converter</comment>
   </data>
-  <data name="ExceptionEnumToBooleanConverterParameterMustBeAnEnumName" xml:space="preserve">   
+  <data name="ExceptionEnumToBooleanConverterParameterMustBeAnEnumName" xml:space="preserve">
     <value>parameter must be an Enum name!</value>
     <comment>Parameter must be an Enum name in enum to boolean converter</comment>
   </data>
@@ -209,9 +209,65 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
 
 Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</value>
     <comment>First use prompt message body</comment>
-  </data>  
+  </data>
   <data name="FirstRun_Title.Text" xml:space="preserve">
     <value>Welcome</value>
     <comment>First use prompt message title</comment>
+  </data>
+  <data name="CBTN-About.Label" xml:space="preserve">
+    <value>About</value>
+    <comment>CommandBar button - About - Label</comment>
+  </data>
+  <data name="CBTN-About.ToolTipService.ToolTip" xml:space="preserve">
+    <value>About</value>
+    <comment>CommandBar button - About - Tooltip</comment>
+  </data>
+  <data name="CBTN-Settings.Label" xml:space="preserve">
+    <value>Settings</value>
+    <comment>CommandBar Button - Settings - Label</comment>
+  </data>
+  <data name="CBTN-Settings.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Settings</value>
+    <comment>CommandBar Button - Settings - Tooltip</comment>
+  </data>
+  <data name="Main_AppTitle.Text" xml:space="preserve">
+    <value>FluBase</value>
+    <comment>Application name - Used in titlebars</comment>
+  </data>
+  <data name="About_Description.Text" xml:space="preserve">
+    <value>Created and programmed by [SOMEONE], 2019</value>
+    <comment>About this application description for Settings</comment>
+  </data>
+  <data name="About_GitHubLink.Content" xml:space="preserve">
+    <value>GitHub project</value>
+    <comment>Link to the GitHub Project</comment>
+  </data>
+  <data name="About_GitHubLink.NavigateUri" xml:space="preserve">
+    <value>[LINK TO YOUR GITHUB PROJECT]</value>
+    <comment>GitHub Project URL</comment>
+  </data>
+  <data name="About_LinksTitle.Text" xml:space="preserve">
+    <value>Links</value>
+    <comment>About - Title of the Links category</comment>
+  </data>
+  <data name="About_PrivacyTermsLink.Content" xml:space="preserve">
+    <value>Privacy Policy</value>
+    <comment>Privacy Statement link content for About</comment>
+  </data>
+  <data name="About_PrivacyTermsLink.NavigateUri" xml:space="preserve">
+    <value>[LINK TO YOUR PRIVACY POLICY]</value>
+    <comment>Here is your Privacy Statement url for About</comment>
+  </data>
+  <data name="About_Title.Text" xml:space="preserve">
+    <value>About</value>
+    <comment>Dialog title for AboutDialog</comment>
+  </data>
+  <data name="About_Translators.Text" xml:space="preserve">
+    <value>[YOUR LIST OF TRANSLATORS}</value>
+    <comment>About - List of translators</comment>
+  </data>
+  <data name="About_TranslatorsTitle.Text" xml:space="preserve">
+    <value>Translators</value>
+    <comment>About - Translators</comment>
   </data>
 </root>

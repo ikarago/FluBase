@@ -7,8 +7,11 @@ using FluBase.Activation;
 using FluBase.Helpers;
 
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.System;
+using Windows.UI;
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -75,6 +78,9 @@ namespace FluBase.Services
                     await defaultHandler.HandleAsync(activationArgs);
                 }
 
+                // Set custom view stuff
+                SetTitlebar();
+                
                 // Ensure the current window is active
                 Window.Current.Activate();
 
@@ -133,6 +139,18 @@ namespace FluBase.Services
         private bool IsInteractive(object args)
         {
             return args is IActivatedEventArgs;
+        }
+
+        private void SetTitlebar()
+        {
+            // Make the buttons transparent
+            ApplicationViewTitleBar titlebar = ApplicationView.GetForCurrentView().TitleBar;
+            titlebar.ButtonBackgroundColor = Colors.Transparent;
+            titlebar.ButtonInactiveBackgroundColor = Colors.Transparent;
+
+            // Extend the normal window to the Titlebar for the blur to reach there too
+            CoreApplicationViewTitleBar coreTitlebar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitlebar.ExtendViewIntoTitleBar = true;
         }
     }
 }

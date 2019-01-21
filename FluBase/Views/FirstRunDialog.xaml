@@ -4,25 +4,56 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    d:DesignHeight="345"
-    d:DesignWidth="550"
-    PrimaryButtonText="Ok">
-    <ContentDialog.TitleTemplate>
-        <DataTemplate>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="ms-appx:///Assets/StoreLogo.png" Width="40" Height="40"/>
-                <TextBlock x:Uid="FirstRun_Title" Text="Welcome" Margin="{StaticResource SmallLeftMargin}" VerticalAlignment="Center"/>
-            </StackPanel>
-        </DataTemplate>
-    </ContentDialog.TitleTemplate>
-    <ScrollViewer>
-        <StackPanel>
+
+    Background="{ThemeResource SystemControlAcrylicElementBrush}"
+    BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
+    
+    PrimaryButtonText="Let's go!"
+    
+    mc:Ignorable="d">
+
+    <!-- #TODO: Change this to a proper First Run Dialog -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title with back button -->
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    Visibility="Visible"
+                    Padding="0,0,0,8"
+                    BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
+                    BorderThickness="0,0,0,1">
+            <!-- #TODO: Change to white icon when Light-mode is used -->
+            <Image Width="32"
+                   Height="32"
+                   Margin="8"
+                   Source="ms-appx:///Assets/StoreLogo.png"/>
+
+            <TextBlock Text="&#xE781;"
+                       FontFamily="Segoe MDL2 Assets"
+                       Style="{ThemeResource SubheaderTextBlockStyle}"
+                       FontWeight="Bold" 
+                       TextAlignment="Center"
+                       Width="40"
+                       Visibility="Collapsed"/>
+            <TextBlock x:Uid="FirstRun_Title"
+                       Text="Welcome"
+                       Margin="12,0"
+                       VerticalAlignment="Center"
+                       Style="{ThemeResource TitleTextBlockStyle}"
+                       FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Margin="0,12,0,0">
             <TextBlock x:Uid="FirstRun_Body" TextWrapping="WrapWholeWords">
-                <Run>Replace the content of this dialog with whatever content is appropriate to your app.</Run><LineBreak/>
-                <Run>You might want to explain key features or functionality.</Run><LineBreak/>
-                <Run>Don't feel restricted to just text. You can also include images and animations if you wish too.</Run>
+                <Run>Something cool has happened.</Run><LineBreak/>
+                <Run>Like cool new stability and performance fixes.</Run><LineBreak/>
+                <Run>Maybe a new feature as well, who knows?</Run><LineBreak/>
             </TextBlock>
         </StackPanel>
-    </ScrollViewer>
+    </Grid>
 </ContentDialog>
