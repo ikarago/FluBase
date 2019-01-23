@@ -166,7 +166,7 @@
 
         <FontIcon Grid.Row="2"
                   Canvas.ZIndex="5"
-                  Visibility="Visible"
+                  Visibility="Collapsed"
                   Glyph="&#xE105;"
                   FontSize="72"
                   Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"
