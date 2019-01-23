@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using FluBase.Views;
+using FluBase.Views.Dialogs;
 
 using Microsoft.Toolkit.Uwp.Helpers;
 

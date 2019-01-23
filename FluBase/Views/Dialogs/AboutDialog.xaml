@@ -1,27 +1,18 @@
 ﻿<ContentDialog
-    x:Class="FluBase.Views.SettingsDialog"
+    x:Class="FluBase.Views.Dialogs.AboutDialog"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:FluBase.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:contract7Present="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
-
-    xmlns:helper="using:FluBase.Helpers"
-    xmlns:xaml="using:Windows.UI.Xaml"
-
+    
     Background="{ThemeResource SystemControlAcrylicElementBrush}"
     BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
     
-    RequestedTheme="{x:Bind ViewModel.ElementTheme, Mode=OneWay}"
-
     mc:Ignorable="d">
 
-    <ContentDialog.Resources>
-        <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
-    </ContentDialog.Resources>
-
-    <Grid Margin="0">
+    <Grid>
         <contract7Present:Grid.BackgroundTransition>
             <contract7Present:BrushTransition />
         </contract7Present:Grid.BackgroundTransition>
@@ -32,22 +23,20 @@
 
         <!-- Title with back button -->
         <StackPanel Grid.Row="0"
-                    Canvas.ZIndex="10"
                     Orientation="Horizontal"
                     Visibility="Visible"
-                    Padding="0,0,0,6"
+                    Padding="0,0,0,8"
                     BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                     BorderThickness="0,0,0,1">
             <Button Style="{ThemeResource NavigationBackButtonNormalStyle}"
                     Command="{x:Bind CloseDialogCommand}"/>
-            <TextBlock x:Uid="Settings_Title"
-                       Text="Settings"
+            <TextBlock x:Uid="About_Title"
+                       Text="About"
                        Margin="12,0"
                        VerticalAlignment="Center"
                        Style="{ThemeResource TitleTextBlockStyle}"
                        FontWeight="Bold"/>
         </StackPanel>
-
 
         <!-- Title and close button -->
         <RelativePanel Grid.Row="0"
@@ -56,8 +45,7 @@
                        Padding="0,0,0,6"
                        BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                        BorderThickness="0,0,0,1">
-            <TextBlock x:Uid="Settings_Title"
-                       Text="Settings"
+            <TextBlock Text="About"
                        FontWeight="Bold"
                        Style="{ThemeResource TitleTextBlockStyle}"
                        RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -70,66 +58,83 @@
                     Command="{x:Bind CloseDialogCommand}"/>
         </RelativePanel>
 
+        
         <!-- Content -->
         <ScrollViewer Grid.Row="1">
             <StackPanel Padding="0,12,0,0">
-                <!-- Personalization -->
+                <!-- App info -->
                 <StackPanel Margin="{StaticResource DialogCategoryMargin}">
-                    <TextBlock Text="Personalization"
-                               x:Uid="Settings_Personalization"
-                               FontWeight="Bold"
-                               Margin="{StaticResource DialogSubtitleMargin}"
-                               Style="{StaticResource SubtitleTextBlockStyle}" />
-
-                    <!-- Theme -->
-                    <StackPanel Margin="{StaticResource DialogSubcategoryMargin}">
-                        <TextBlock Text="Theme"
-                                   x:Uid="Settings_Theme"
-                                   FontWeight="SemiBold"
-                                   Style="{StaticResource BodyTextBlockStyle}" />
-
-                        <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                            <RadioButton x:Uid="Settings_Theme_Light"
-                                         GroupName="AppTheme"
-                                         IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
-                                         Command="{x:Bind ViewModel.SwitchThemeCommand}">
-                                <RadioButton.CommandParameter>
-                                    <xaml:ElementTheme>Light</xaml:ElementTheme>
-                                </RadioButton.CommandParameter>
-                            </RadioButton>
-                            <RadioButton x:Uid="Settings_Theme_Dark"
-                                         GroupName="AppTheme"
-                                         IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
-                                         Command="{x:Bind ViewModel.SwitchThemeCommand}">
-                                <RadioButton.CommandParameter>
-                                    <xaml:ElementTheme>Dark</xaml:ElementTheme>
-                                </RadioButton.CommandParameter>
-                            </RadioButton>
-                            <RadioButton x:Uid="Settings_Theme_Default"
-                                         GroupName="AppTheme"
-                                         IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}"
-                                         Command="{x:Bind ViewModel.SwitchThemeCommand}">
-                                <RadioButton.CommandParameter>
-                                    <xaml:ElementTheme>Default</xaml:ElementTheme>
-                                </RadioButton.CommandParameter>
-                            </RadioButton>
-                        </StackPanel>
-                    </StackPanel>
-
+                    <!-- App Title -->
+                    <TextBlock Text="{x:Bind ViewModel.AppName}"
+                               Style="{ThemeResource SubtitleTextBlockStyle}"
+                               FontWeight="Bold"/>
+                    <!-- Version number -->
+                    <TextBlock Text="{x:Bind ViewModel.VersionNumber, Mode=OneWay}"
+                               Margin="0,0,0,4"
+                               Style="{ThemeResource CaptionTextBlockStyle}"/>
+                    <!-- About Description -->
+                    <TextBlock Text="FluBase, created and programmed by Ikarago, 2018-2019"
+                               x:Uid="About_Description"
+                               TextWrapping="Wrap"
+                               Margin="{StaticResource XSmallTopMargin}"/>
                 </StackPanel>
 
 
+                <!-- Translators -->
+                <StackPanel Margin="{StaticResource DialogCategoryMargin}"
+                            Visibility="Collapsed">
+                    <TextBlock x:Uid="About_TranslatorsTitle"
+                               Text="Translators"
+                               FontWeight="Bold"
+                               Margin="{StaticResource DialogSubtitleMargin}"
+                               Style="{StaticResource SubtitleTextBlockStyle}" />
+                    <TextBlock x:Uid="About_Translators"
+                               Text="Sample text"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+
+
+                <!-- Links -->
+                <StackPanel Margin="{StaticResource DialogCategoryMargin}">
+                    <TextBlock x:Uid="About_LinksTitle"
+                               Text="Links"
+                               FontWeight="Bold"
+                               Margin="{StaticResource DialogSubtitleMargin}"
+                               Style="{StaticResource SubtitleTextBlockStyle}" />
+                    <!-- Privacy Policy -->
+                    <HyperlinkButton x:Uid="About_PrivacyTermsLink"
+                                     Content="Privacy Policy"/>
+                    <!-- Feedback Hub link-->
+                    <!--<HyperlinkButton x:Uid="FeedbackHub_Link"
+                                     Content="Feedback"
+                                     Command="{x:Bind ViewModel.LaunchFeedbackHubCommand}"
+                                     Visibility="{x:Bind ViewModel.FeedbackLinkVisibility}"/>-->
+                    <!-- GitHub Project -->
+                    <HyperlinkButton x:Uid="About_GitHubLink"
+                                     Content="GitHub project"/>
+                </StackPanel>
             </StackPanel>
+
         </ScrollViewer>
 
         <!-- Dialog background icon -->
+        <Image x:Name="imgLogo"
+               Grid.Row="1"
+               Source="/Assets/Logo/in-app/logo-white.png" 
+               Height="72"
+               Width="72"
+               Opacity="0.25"
+               Visibility="Visible"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"/>
+
         <FontIcon Grid.Row="1"
                   Canvas.ZIndex="5"
-                  Glyph="&#xE115;"
+                  Visibility="Visible"
+                  Glyph="&#xE946;"
                   FontSize="72"
                   Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"
                   HorizontalAlignment="Right"
                   VerticalAlignment="Bottom"/>
     </Grid>
 </ContentDialog>
-

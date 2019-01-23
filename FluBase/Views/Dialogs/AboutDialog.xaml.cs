@@ -8,7 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace FluBase.Views
+namespace FluBase.Views.Dialogs
 {
     public sealed partial class AboutDialog : ContentDialog
     {

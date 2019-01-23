@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace FluBase.Views
+namespace FluBase.Views.Dialogs
 {
     public sealed partial class SettingsDialog : ContentDialog
     {

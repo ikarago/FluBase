@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using FluBase.Helpers;
-using FluBase.Views;
+using FluBase.Views.Dialogs;
 
 namespace FluBase.ViewModels
 {

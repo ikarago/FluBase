@@ -3,7 +3,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace FluBase.Views
+namespace FluBase.Views.Dialogs
 {
     public sealed partial class FirstRunDialog : ContentDialog
     {
