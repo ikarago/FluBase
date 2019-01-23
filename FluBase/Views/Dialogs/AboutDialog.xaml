@@ -42,7 +42,7 @@
         <RelativePanel Grid.Row="0"
                        HorizontalAlignment="Stretch"
                        Visibility="Collapsed"
-                       Padding="0,0,0,6"
+                       Padding="0,0,0,8"
                        BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                        BorderThickness="0,0,0,1">
             <TextBlock Text="About"

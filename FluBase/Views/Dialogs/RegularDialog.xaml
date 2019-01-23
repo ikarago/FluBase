@@ -43,10 +43,10 @@
         <RelativePanel Grid.Row="0"
                        HorizontalAlignment="Stretch"
                        Visibility="Visible"
-                       Padding="0,0,0,6"
+                       Padding="0,0,0,8"
                        BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                        BorderThickness="0,0,0,1">
-            <TextBlock Text="Unsaved changes"
+            <TextBlock Text="Regular dialog"
                        FontWeight="Bold"
                        Style="{ThemeResource TitleTextBlockStyle}"
                        RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -64,7 +64,8 @@
         <ScrollViewer Grid.Row="1"
                       MinHeight="160">
             <StackPanel Padding="0,12,0,0">
-                <TextBlock Text="Would you like to save your current document?"
+                <TextBlock Text="In case you need to annoy your users with popups."
+                           TextWrapping="Wrap"
                            Margin="{StaticResource DialogSubcategoryMargin}"/>
             </StackPanel>
 
@@ -73,6 +74,7 @@
 
         <!-- Buttons -->
         <StackPanel Grid.Row="2"
+                    Visibility="Visible"
                     Orientation="Vertical"
                     HorizontalAlignment="Stretch"
                     Padding="0,8,0,0"
@@ -85,12 +87,12 @@
                     <StackPanel MinWidth="128"
                                 MinHeight="32"
                                 Orientation="Horizontal">
-                        <TextBlock Text="&#xE105;"
+                        <TextBlock Text="&#xE10B;"
                                    FontFamily="Segoe MDL2 Assets"
                                    Style="{ThemeResource SubtitleTextBlockStyle}"
                                    VerticalAlignment="Center"
                                    Padding="0,0,12,0"/>
-                        <TextBlock Text="Save"
+                        <TextBlock Text="Ok"
                                    VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
@@ -99,6 +101,7 @@
 
             <!-- Button 2 -->
             <Button Margin="6,0"
+                    Visibility="Collapsed"
                     Background="Transparent">
                 <Button.Content>
                     <StackPanel MinWidth="128"
@@ -117,6 +120,7 @@
 
             <!-- Button 3 -->
             <Button Margin="6,0"
+                    Visibility="Collapsed"
                     Background="Transparent">
                 <Button.Content>
                     <StackPanel MinWidth="128"
@@ -149,9 +153,10 @@
                VerticalAlignment="Bottom"/>
 
         <FontIcon Grid.Row="1"
+                  Grid.RowSpan="2"
                   Canvas.ZIndex="5"
                   Visibility="Collapsed"
-                  Glyph="&#xE105;"
+                  Glyph="&#xE946;"
                   FontSize="72"
                   Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"
                   HorizontalAlignment="Right"

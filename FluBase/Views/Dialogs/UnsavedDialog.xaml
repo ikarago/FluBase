@@ -43,7 +43,7 @@
         <RelativePanel Grid.Row="0"
                        HorizontalAlignment="Stretch"
                        Visibility="Visible"
-                       Padding="0,0,0,6"
+                       Padding="0,0,0,8"
                        BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                        BorderThickness="0,0,0,1">
             <TextBlock Text="Unsaved changes"
@@ -65,6 +65,7 @@
                       MinHeight="160">
             <StackPanel Padding="0,12,0,0">
                 <TextBlock Text="Would you like to save your current document?"
+                           TextWrapping="Wrap"
                            Margin="{StaticResource DialogSubcategoryMargin}"/>
             </StackPanel>
 
@@ -163,9 +164,9 @@
                HorizontalAlignment="Right"
                VerticalAlignment="Bottom"/>
 
-        <FontIcon Grid.Row="1"
+        <FontIcon Grid.Row="2"
                   Canvas.ZIndex="5"
-                  Visibility="Collapsed"
+                  Visibility="Visible"
                   Glyph="&#xE105;"
                   FontSize="72"
                   Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"

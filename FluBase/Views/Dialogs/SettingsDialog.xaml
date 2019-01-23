@@ -35,7 +35,7 @@
                     Canvas.ZIndex="10"
                     Orientation="Horizontal"
                     Visibility="Visible"
-                    Padding="0,0,0,6"
+                    Padding="0,0,0,8"
                     BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                     BorderThickness="0,0,0,1">
             <Button Style="{ThemeResource NavigationBackButtonNormalStyle}"
@@ -53,7 +53,7 @@
         <RelativePanel Grid.Row="0"
                        HorizontalAlignment="Stretch"
                        Visibility="Collapsed"
-                       Padding="0,0,0,6"
+                       Padding="0,0,0,8"
                        BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                        BorderThickness="0,0,0,1">
             <TextBlock x:Uid="Settings_Title"
