@@ -58,6 +58,22 @@ namespace FluBase.ViewModels
             }
         }
 
+        private ICommand _unsavedCommand;
+        public ICommand UnsavedCommand
+        {
+            get
+            {
+                if (_unsavedCommand == null)
+                {
+                    _unsavedCommand = new RelayCommand(
+                        () =>
+                        {
+                            ShowUnsavedDialog();
+                        });
+                }
+                return _unsavedCommand;
+            }
+        }
 
         // Methods
         private async void ShowAboutDialog()
@@ -72,6 +88,10 @@ namespace FluBase.ViewModels
             await dialog.ShowAsync();
         }
 
-
+        private async void ShowUnsavedDialog()
+        {
+            UnsavedDialog dialog = new UnsavedDialog();
+            await dialog.ShowAsync();
+        }
     }
 }

@@ -54,6 +54,11 @@
         <!-- Commandbar -->
         <CommandBar Grid.Row="3"
                     Canvas.ZIndex="200">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="Unsaved"
+                              Icon="Save"
+                              Command="{x:Bind ViewModel.UnsavedCommand}"/>
+            </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
                 <AppBarButton x:Uid="CBTN-Settings"
                               Label="Settings"
