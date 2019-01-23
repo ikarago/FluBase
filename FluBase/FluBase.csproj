@@ -214,6 +214,7 @@
     <Folder Include="Assets\Logo\contrast-white\" />
     <Folder Include="Assets\Logo\in-app\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Dialogs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />

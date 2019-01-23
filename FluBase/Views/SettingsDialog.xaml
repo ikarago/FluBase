@@ -122,6 +122,7 @@
             </StackPanel>
         </ScrollViewer>
 
+        <!-- Dialog background icon -->
         <FontIcon Grid.Row="1"
                   Canvas.ZIndex="5"
                   Glyph="&#xE115;"
