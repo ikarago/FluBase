@@ -12,7 +12,10 @@
     
     mc:Ignorable="d">
 
-    <Grid>
+    <!-- NOTE - This dialog is still experimental and subject to (massive) changes. Use at your own risk -->
+
+        <Grid>
+
         <contract7Present:Grid.BackgroundTransition>
             <contract7Present:BrushTransition />
         </contract7Present:Grid.BackgroundTransition>
