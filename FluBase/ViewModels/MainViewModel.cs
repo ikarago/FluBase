@@ -75,6 +75,23 @@ namespace FluBase.ViewModels
             }
         }
 
+        private ICommand _regularDialogCommand;
+        public ICommand RegularDialogCommand
+        {
+            get
+            {
+                if (_regularDialogCommand == null)
+                {
+                    _regularDialogCommand = new RelayCommand(
+                        () =>
+                        {
+                            ShowRegularDialog();
+                        });
+                }
+                return _regularDialogCommand;
+            }
+        }
+
         // Methods
         private async void ShowAboutDialog()
         {
@@ -91,6 +108,12 @@ namespace FluBase.ViewModels
         private async void ShowUnsavedDialog()
         {
             UnsavedDialog dialog = new UnsavedDialog();
+            await dialog.ShowAsync();
+        }
+
+        private async void ShowRegularDialog()
+        {
+            RegularDialog dialog = new RegularDialog();
             await dialog.ShowAsync();
         }
     }

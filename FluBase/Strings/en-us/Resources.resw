@@ -290,4 +290,36 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
     <value>Windows Template Studio</value>
     <comment>About - Acknowlegdements Windows Template Studio title</comment>
   </data>
+  <data name="About_AcknowledgementsFlubase.NavigateUri" xml:space="preserve">
+    <value>https://github.com/ikarago/FluBase</value>
+    <comment>About - Acknowlegdements FluBase Project URL</comment>
+  </data>
+  <data name="About_AcknowledgementsWct.NavigateUri" xml:space="preserve">
+    <value>https://github.com/windows-toolkit/WindowsCommunityToolkit</value>
+    <comment>About - Acknowledgements Windows Community Toolkit Project URL</comment>
+  </data>
+  <data name="About_AcknowledgementsWts.NavigateUri" xml:space="preserve">
+    <value>https://github.com/Microsoft/WindowsTemplateStudio</value>
+    <comment>About - Acknowlegdements Windows Template Studio Project URL</comment>
+  </data>
+  <data name="Unsaved_CancelText.Text" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Unsaved dialog - Close button text</comment>
+  </data>
+  <data name="Unsaved_Content.Text" xml:space="preserve">
+    <value>Would you like to save your work?</value>
+    <comment>Unsaved dialog - Content text</comment>
+  </data>
+  <data name="Unsaved_DiscardText.Text" xml:space="preserve">
+    <value>Discard changes</value>
+    <comment>Unsaved dialog - Discard option</comment>
+  </data>
+  <data name="Unsaved_SaveText.Text" xml:space="preserve">
+    <value>Save</value>
+    <comment>Unsaved dialog - Save option</comment>
+  </data>
+  <data name="Unsaved_Title.Text" xml:space="preserve">
+    <value>Unsaved changes</value>
+    <comment>Unsaved dialog - Title</comment>
+  </data>
 </root>

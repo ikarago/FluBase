@@ -85,7 +85,8 @@
                     BorderThickness="0,1,0,0">
             <!-- Button 1 -->
             <Button Margin="6,0"
-                    Background="Transparent">
+                    Background="Transparent"
+                    Command="{x:Bind CloseButtonCommand}">
                 <Button.Content>
                     <StackPanel MinWidth="128"
                                 MinHeight="32"
