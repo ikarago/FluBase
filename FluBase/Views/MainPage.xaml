@@ -57,6 +57,7 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton Label="Regular"
                               Icon="Accept"
+                              Visibility="Collapsed"
                               Command="{x:Bind ViewModel.RegularDialogCommand}" />
                 <AppBarButton Label="Unsaved"
                               Icon="Save"

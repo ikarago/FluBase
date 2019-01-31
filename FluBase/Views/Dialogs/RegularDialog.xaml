@@ -17,7 +17,7 @@
     
         <Grid>
 
-        <contract7Present:Grid.BackgroundTransition>
+        <!--<contract7Present:Grid.BackgroundTransition>
             <contract7Present:BrushTransition />
         </contract7Present:Grid.BackgroundTransition>
         <Grid.RowDefinitions>
@@ -26,7 +26,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <!-- Title with back button -->
+        --><!-- Title with back button --><!--
         <StackPanel Grid.Row="0"
                     Orientation="Horizontal"
                     Visibility="Collapsed"
@@ -43,7 +43,7 @@
                        FontWeight="Bold"/>
         </StackPanel>
 
-        <!-- Title and close button -->
+        --><!-- Title and close button --><!--
         <RelativePanel Grid.Row="0"
                        HorizontalAlignment="Stretch"
                        Visibility="Visible"
@@ -64,7 +64,7 @@
         </RelativePanel>
 
 
-        <!-- Content -->
+        --><!-- Content --><!--
         <ScrollViewer Grid.Row="1"
                       MinHeight="160">
             <StackPanel Padding="0,12,0,0">
@@ -76,7 +76,7 @@
         </ScrollViewer>
 
 
-        <!-- Buttons -->
+        --><!-- Buttons --><!--
         <StackPanel Grid.Row="2"
                     Visibility="Visible"
                     Orientation="Vertical"
@@ -84,7 +84,7 @@
                     Padding="0,8,0,0"
                     BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                     BorderThickness="0,1,0,0">
-            <!-- Button 1 -->
+            --><!-- Button 1 --><!--
             <Button Background="Transparent"
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Left"
@@ -106,7 +106,7 @@
             </Button>
 
 
-            <!-- Button 2 -->
+            --><!-- Button 2 -->
 
             <!-- #TODO Needs to be improved a lot more - DO NOT USE -->
             
@@ -145,13 +145,13 @@
                                    VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
-            </Button>-->
+            </Button>--><!--
 
         </StackPanel>
 
         
 
-        <!-- Dialog background icon -->
+        --><!-- Dialog background icon --><!--
         <Image x:Name="imgLogo"
                Grid.Row="1"
                Source="/Assets/Logo/in-app/logo-white.png" 
@@ -170,7 +170,7 @@
                   FontSize="72"
                   Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"
                   HorizontalAlignment="Right"
-                  VerticalAlignment="Bottom"/>
+                  VerticalAlignment="Bottom"/>-->
     </Grid>
 </ContentDialog>
 
