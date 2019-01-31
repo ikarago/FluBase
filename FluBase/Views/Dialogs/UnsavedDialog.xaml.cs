@@ -1,5 +1,6 @@
 ﻿using FluBase.Helpers;
 using System.Windows.Input;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace FluBase.Views.Dialogs
@@ -30,6 +31,7 @@ namespace FluBase.Views.Dialogs
         // Constructor
         public UnsavedDialog()
         {
+            RequestedTheme = (Window.Current.Content as FrameworkElement).RequestedTheme;
             this.InitializeComponent();
             Result = UnsavedDialogResult.Nothing;
         }
