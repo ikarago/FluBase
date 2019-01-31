@@ -13,7 +13,8 @@
     mc:Ignorable="d">
 
     <!-- NOTE - This dialog is still experimental and subject to (massive) changes. Use at your own risk -->
-
+    <!-- DO NOT USE (#TODO)-->
+    
         <Grid>
 
         <contract7Present:Grid.BackgroundTransition>
@@ -84,9 +85,11 @@
                     BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                     BorderThickness="0,1,0,0">
             <!-- Button 1 -->
-            <Button Margin="6,0"
-                    Background="Transparent"
-                    Command="{x:Bind CloseButtonCommand}">
+            <Button Background="Transparent"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Left"
+                    Padding="12,6"
+                    Command="{x:Bind CloseDialogCommand}">
                 <Button.Content>
                     <StackPanel MinWidth="128"
                                 MinHeight="32"
@@ -104,7 +107,10 @@
 
 
             <!-- Button 2 -->
-            <Button Margin="6,0"
+
+            <!-- #TODO Needs to be improved a lot more - DO NOT USE -->
+            
+            <!--<Button Padding="12,6"
                     Visibility="Collapsed"
                     Background="Transparent">
                 <Button.Content>
@@ -122,7 +128,7 @@
                 </Button.Content>
             </Button>
 
-            <!-- Button 3 -->
+            --><!-- Button 3 --><!--
             <Button Margin="6,0"
                     Visibility="Collapsed"
                     Background="Transparent">
@@ -139,7 +145,7 @@
                                    VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
-            </Button>
+            </Button>-->
 
         </StackPanel>
 

@@ -92,6 +92,7 @@ namespace FluBase.ViewModels
             }
         }
 
+
         // Methods
         private async void ShowAboutDialog()
         {
