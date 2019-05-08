@@ -27,6 +27,18 @@ namespace FluBase.Views.Dialogs
         // Properties
         public UnsavedDialogResult Result { get; set; }
 
+        public string SaveButtonText { get; set; }
+        public string DiscardButtonText { get; set; }
+        public string CancelButtonText { get; set; }
+        public string CloseButtonToolTipText { get; set; }
+
+        public string SaveButtonIcon { get; set; }
+        public string DiscardButtonIcon { get; set; }
+        public string CancelButtonIcon { get; set; }
+
+        public string DialogTitleText { get; set; }
+        public string DialogContentText { get; set; }
+
 
         // Constructor
         public UnsavedDialog()
@@ -34,6 +46,21 @@ namespace FluBase.Views.Dialogs
             RequestedTheme = (Window.Current.Content as FrameworkElement).RequestedTheme;
             this.InitializeComponent();
             Result = UnsavedDialogResult.Nothing;
+
+            // Set the texts
+            if (DialogTitleText == "" || DialogTitleText == null)
+            { DialogTitleText = "Discard changes"; }
+            if (DialogContentText == "" || DialogContentText == null)
+            { DialogContentText = "Would you like to save your work?"; }
+
+            if (SaveButtonText == "" || SaveButtonText == null)
+            { SaveButtonText = "Save"; }
+            if (DiscardButtonText == "" || DiscardButtonText == null)
+            { DiscardButtonText = "Discard changes"; }
+            if (CancelButtonText == "" || CancelButtonText == null)
+            { CancelButtonText = "Cancel"; }
+            if (CloseButtonToolTipText == "" || CloseButtonToolTipText == null)
+            { CloseButtonToolTipText = "Close"; }
         }
 
 

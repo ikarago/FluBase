@@ -46,8 +46,7 @@
                        Padding="0,0,0,8"
                        BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                        BorderThickness="0,0,0,1">
-            <TextBlock x:Uid="Unsaved_Title"
-                       Text="Unsaved changes"
+            <TextBlock Text="{x:Bind DialogTitleText, Mode=OneWay, FallbackValue='Discard changes?'}"
                        FontWeight="Bold"
                        Style="{ThemeResource TitleTextBlockStyle}"
                        RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -57,6 +56,8 @@
                     Height="40"
                     Width="40"
                     RelativePanel.AlignRightWithPanel="True"
+                    ToolTipService.ToolTip="{x:Bind CloseButtonToolTipText, Mode=OneWay, FallbackValue='Close'}"
+                    Style="{ThemeResource ButtonRevealStyle}"
                     Command="{x:Bind CloseCommand}"/>
         </RelativePanel>
 
@@ -65,8 +66,7 @@
         <ScrollViewer Grid.Row="1"
                       MinHeight="160">
             <StackPanel Padding="0,12,0,0">
-                <TextBlock x:Uid="Unsaved_Content"
-                           Text="Would you like to save your current document?"
+                <TextBlock Text="{x:Bind DialogContentText, Mode=OneWay, FallbackValue='Would you like to save the current document before closing it?'}"
                            TextWrapping="Wrap"
                            Margin="{StaticResource DialogSubcategoryMargin}"/>
             </StackPanel>
@@ -85,18 +85,16 @@
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Left"
                     Background="Transparent"
+                    Style="{ThemeResource ButtonRevealStyle}"
                     Command="{x:Bind SaveCommand}">
                 <Button.Content>
                     <StackPanel MinWidth="128"
                                 MinHeight="32"
                                 Orientation="Horizontal">
-                        <TextBlock Text="&#xE105;"
-                                   FontFamily="Segoe MDL2 Assets"
-                                   Style="{ThemeResource SubtitleTextBlockStyle}"
-                                   VerticalAlignment="Center"
-                                   Padding="0,0,12,0"/>
-                        <TextBlock x:Uid="Unsaved_SaveText"
-                                   Text="Save"
+                        <FontIcon Glyph="&#xE105;"
+                                  Margin="0,0,12,0"
+                                  VerticalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind SaveButtonText, FallbackValue='Save'}"
                                    VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
@@ -111,18 +109,16 @@
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Left"
                     Background="Transparent"
+                    Style="{ThemeResource ButtonRevealStyle}"
                     Command="{x:Bind DiscardCommand}">
                 <Button.Content>
                     <StackPanel MinWidth="128"
                                 MinHeight="32"
                                 Orientation="Horizontal">
-                        <TextBlock Text="&#xE107;"
-                                   FontFamily="Segoe MDL2 Assets"
-                                   Style="{ThemeResource SubtitleTextBlockStyle}"
-                                   Padding="0,0,12,0"
-                                   VerticalAlignment="Center"/>
-                        <TextBlock x:Uid="Unsaved_DiscardText"
-                                   Text="Discard changes"
+                        <FontIcon Glyph="&#xE107;"
+                                  Margin="0,0,12,0"
+                                  VerticalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind DiscardButtonText, FallbackValue='Discard changes'}"
                                    VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
@@ -137,18 +133,17 @@
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Left"
                     Background="Transparent"
+                    Style="{ThemeResource ButtonRevealStyle}"
                     Command="{x:Bind CancelCommand}">
                 <Button.Content>
                     <StackPanel MinWidth="128"
                                 MinHeight="32"
                                 Orientation="Horizontal">
-                        <TextBlock Text="&#xE106;"
-                                   FontFamily="Segoe MDL2 Assets"
-                                   Style="{ThemeResource SubtitleTextBlockStyle}"
-                                   Padding="0,0,12,0"
-                                   VerticalAlignment="Center"/>
+                        <FontIcon Glyph="&#xE106;"
+                                  Margin="0,0,12,0"
+                                  VerticalAlignment="Center"/>
                         <TextBlock x:Uid="Unsaved_CancelText"
-                                   Text="Cancel"
+                                   Text="{x:Bind CancelButtonText, FallbackValue='Cancel'}"
                                    VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>

@@ -5,6 +5,7 @@
     <!-- Fluent Dialog margins -->
     <Thickness x:Key="DialogCategoryMargin">0,0,0,48</Thickness>
     <Thickness x:Key="DialogSubcategoryMargin">0,0,0,24</Thickness>
+    <Thickness x:Key="DialogTitleMargin">0,0,0,16</Thickness>
     <Thickness x:Key="DialogSubtitleMargin">0,0,0,12</Thickness>
 
     <!--Medium size margins-->

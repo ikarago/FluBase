@@ -114,7 +114,7 @@ namespace FluBase.ViewModels
 
         private async void ShowRegularDialog()
         {
-            RegularDialog dialog = new RegularDialog();
+            PageDialog dialog = new PageDialog();
             await dialog.ShowAsync();
         }
     }

@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--Common texts-->
-    <Style x:Key="PageTitleStyle" TargetType="TextBlock">
+    <!--<Style x:Key="PageTitleStyle" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="FontWeight" Value="SemiLight" />
         <Setter Property="FontSize" Value="{StaticResource LargeFontSize}" />
@@ -16,6 +16,110 @@
         <Setter Property="FontSize" Value="{StaticResource MediumFontSize}" />
         <Setter Property="TextTrimming" Value="CharacterEllipsis" />
         <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>-->
+
+    <!-- Fluent styles -->
+    <!-- Fluent Header Styles #TODO -->
+
+    <!-- Fluent Subheader Styles #TODO -->
+
+    <!-- Fluent Title Styles-->
+    <Style x:Key="FluentTitleTextStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+
+    <Style x:Key="FluentTitleIconStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Margin" Value="0,0,18,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!-- Fluent Subtitle Styles #TODO -->
+
+    <!-- Fluent Body Styles #TODO -->
+
+    <!-- Fluent Caption Styles #TODO -->
+
+
+
+    <!-- #TEMP -->
+    <!-- Large Header -->
+    <Style x:Key="FluentLargeHeaderTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="32" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+
+    <!-- Header -->
+    <Style x:Key="FluentHeaderTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+
+    <!-- Subheader -->
+    <Style x:Key="FluentSubheaderTextStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+
+    <Style x:Key="FluentSubheaderIconStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Margin" Value="0,0,18,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+
+    <!-- Light Subheader -->
+    <Style x:Key="FluentLightSubheaderTextStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+
+
+    <!-- Base -->
+    <Style x:Key="FluentBaseTextStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style x:Key="FluentBaseIconStyle" TargetType="TextBlock" BasedOn="{StaticResource FluentSubheaderIconStyle}">
+        <!-- Added for easy editing -->
+    </Style>
+
+
+    <!-- Body -->
+    <Style x:Key="FluentBodyTextStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style x:Key="FluentBodyIconStyle" TargetType="TextBlock" BasedOn="{StaticResource FluentSubheaderIconStyle}">
+        <!-- Added for easy editing -->
+    </Style>
+
+
+    <!-- Subbody -->
+    <!-- This will be the same as Body, but with the text in grey -->
+    <Style x:Key="FluentSubbodyTextStyle" TargetType="TextBlock" BasedOn="{StaticResource FluentBodyTextStyle}">
+        <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
+    </Style>
+
+    <!-- Caption -->
+    <Style x:Key="FluentCaptionTextStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style x:Key="FluentCaptionIconStyle" TargetType="TextBlock" BasedOn="{StaticResource FluentSubheaderIconStyle}">
+        <!-- Added for easy editing -->
     </Style>
 
 </ResourceDictionary>
