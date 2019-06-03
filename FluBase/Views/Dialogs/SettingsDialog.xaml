@@ -5,26 +5,25 @@
     xmlns:local="using:FluBase.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:contract7Present="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
 
     xmlns:helper="using:FluBase.Helpers"
     xmlns:xaml="using:Windows.UI.Xaml"
+    xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
 
     Background="{ThemeResource SystemControlAcrylicElementBrush}"
-    BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
-    
+    BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}" 
+    Windows10version1809:CornerRadius="{StaticResource FluentDialogCorners}"
     RequestedTheme="{x:Bind ViewModel.ElementTheme, Mode=OneWay}"
-
+    
     mc:Ignorable="d">
-
     <ContentDialog.Resources>
         <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
     </ContentDialog.Resources>
 
-    <Grid Margin="0">
-        <contract7Present:Grid.BackgroundTransition>
-            <contract7Present:BrushTransition />
-        </contract7Present:Grid.BackgroundTransition>
+    <Grid>
+        <Windows10version1809:Grid.BackgroundTransition>
+            <BrushTransition />
+        </Windows10version1809:Grid.BackgroundTransition>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -35,58 +34,40 @@
                     Canvas.ZIndex="10"
                     Orientation="Horizontal"
                     Visibility="Visible"
-                    Padding="0,0,0,8"
+                    Padding="0,0,0,6"
                     BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                     BorderThickness="0,0,0,1">
             <Button Style="{ThemeResource NavigationBackButtonNormalStyle}"
+                    Windows10version1809:CornerRadius="{ThemeResource FluentButtonCorners}"
                     Command="{x:Bind CloseDialogCommand}"/>
             <TextBlock x:Uid="Settings_Title"
                        Text="Settings"
                        Margin="12,0"
                        VerticalAlignment="Center"
-                       Style="{ThemeResource TitleTextBlockStyle}"
-                       FontWeight="Bold"/>
+                       Style="{ThemeResource FluentSubheaderTextStyle}"/>
         </StackPanel>
 
-
-        <!-- Title and close button -->
-        <RelativePanel Grid.Row="0"
-                       HorizontalAlignment="Stretch"
-                       Visibility="Collapsed"
-                       Padding="0,0,0,8"
-                       BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
-                       BorderThickness="0,0,0,1">
-            <TextBlock x:Uid="Settings_Title"
-                       Text="Settings"
-                       FontWeight="Bold"
-                       Style="{ThemeResource TitleTextBlockStyle}"
-                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
-            <Button Content="&#xE106;"
-                    Background="Transparent"
-                    FontFamily="Segoe MDL2 Assets"
-                    Height="40"
-                    Width="40"
-                    RelativePanel.AlignRightWithPanel="True"
-                    Command="{x:Bind CloseDialogCommand}"/>
-        </RelativePanel>
 
         <!-- Content -->
         <ScrollViewer Grid.Row="1">
             <StackPanel Padding="0,12,0,0">
-                <!-- Personalization -->
+
+                <!-- Personalisation -->
                 <StackPanel Margin="{StaticResource DialogCategoryMargin}">
-                    <TextBlock Text="Personalization"
-                               x:Uid="Settings_Personalization"
-                               FontWeight="Bold"
-                               Margin="{StaticResource DialogSubtitleMargin}"
-                               Style="{StaticResource SubtitleTextBlockStyle}" />
+                    <StackPanel Orientation="Horizontal"
+                                Margin="{ThemeResource DialogTitleMargin}">
+                        <TextBlock Text="&#xE790;"
+                                   Style="{ThemeResource FluentTitleIconStyle}" />
+                        <TextBlock x:Uid="Settings_Personalization"
+                                   Text="Personalisation"                              
+                                   Style="{StaticResource FluentTitleTextStyle}" />
+                    </StackPanel>
 
                     <!-- Theme -->
                     <StackPanel Margin="{StaticResource DialogSubcategoryMargin}">
                         <TextBlock Text="Theme"
                                    x:Uid="Settings_Theme"
-                                   FontWeight="SemiBold"
-                                   Style="{StaticResource BodyTextBlockStyle}" />
+                                   Style="{StaticResource FluentBaseTextStyle}" />
 
                         <StackPanel Margin="{StaticResource XSmallTopMargin}">
                             <RadioButton x:Uid="Settings_Theme_Light"
@@ -117,12 +98,11 @@
                     </StackPanel>
 
                 </StackPanel>
-
+                <!-- END OF - Personalisation -->
 
             </StackPanel>
         </ScrollViewer>
 
-        <!-- Dialog background icon -->
         <FontIcon Grid.Row="1"
                   Canvas.ZIndex="5"
                   Glyph="&#xE115;"

@@ -47,7 +47,84 @@
         <!-- Content -->
         <Grid Grid.Row="2"
               Canvas.ZIndex="100">
-            
+            <StackPanel Orientation="Vertical"
+                        Margin="24,12">
+                <!-- Header -->
+                <StackPanel Orientation="Horizontal"
+                            Margin="{ThemeResource DialogTitleMargin}">
+
+                    <TextBlock x:Uid="About_TranslatorsTitle"
+                               Text="Header"
+                               Style="{ThemeResource FluentHeaderTextStyle}" />
+                </StackPanel>
+
+                <!-- Subheader-->
+                <StackPanel Orientation="Horizontal"
+                            Margin="{ThemeResource DialogTitleMargin}">
+
+                    <TextBlock x:Uid="About_TranslatorsTitle"
+                               Text="Subheader"
+                               Style="{ThemeResource FluentSubheaderTextStyle}" />
+                </StackPanel>
+
+                <!-- Title -->
+                <StackPanel Orientation="Horizontal"
+                            Margin="{ThemeResource DialogTitleMargin}">
+                    <TextBlock Text="&#xE164;"
+                               Style="{ThemeResource FluentTitleIconStyle}" />
+                    <TextBlock x:Uid="About_TranslatorsTitle"
+                               Text="Title"
+                               Style="{ThemeResource FluentTitleTextStyle}" />
+                </StackPanel>
+
+                <!-- Light Title -->
+                <StackPanel Orientation="Horizontal"
+                            Margin="{ThemeResource DialogTitleMargin}">
+
+                    <TextBlock x:Uid="About_TranslatorsTitle"
+                               Text="Light Title"
+                               Style="{ThemeResource FluentLightTitleTextStyle}" />
+                </StackPanel>
+
+                <!-- Base -->
+                <StackPanel Orientation="Horizontal"
+                            Margin="{ThemeResource DialogTitleMargin}">
+                    <TextBlock Text="&#xE164;"
+                               Style="{ThemeResource FluentBaseIconStyle}" />
+                    <TextBlock x:Uid="About_TranslatorsTitle"
+                               Text="Base"
+                               Style="{ThemeResource FluentBaseTextStyle}" />
+                </StackPanel>
+
+                <!-- Body -->
+                <StackPanel Orientation="Horizontal"
+                            Margin="{ThemeResource DialogTitleMargin}">
+                    <TextBlock Text="&#xE164;"
+                               Style="{ThemeResource FluentBodyIconStyle}" />
+                    <TextBlock x:Uid="About_TranslatorsTitle"
+                               Text="Body"
+                               Style="{ThemeResource FluentBodyTextStyle}" />
+                </StackPanel>
+
+                <!-- Subbody -->
+                <StackPanel Orientation="Horizontal"
+                                Margin="{ThemeResource DialogTitleMargin}">
+                    <TextBlock x:Uid="About_TranslatorsTitle"
+                               Text="Subbody"
+                               Style="{ThemeResource FluentSubbodyTextStyle}" />
+                </StackPanel>
+
+                <!-- Caption -->
+                <StackPanel Orientation="Horizontal"
+                            Margin="{ThemeResource DialogTitleMargin}">
+                    <TextBlock Text="&#xE164;"
+                               Style="{ThemeResource FluentCaptionIconStyle}" />
+                    <TextBlock x:Uid="About_TranslatorsTitle"
+                               Text="Caption"
+                               Style="{ThemeResource FluentCaptionTextStyle}" />
+                </StackPanel>
+            </StackPanel>
+
         </Grid>
 
 
@@ -77,18 +154,5 @@
                 </AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>
-
-
-        
-        <TextBlock
-            Grid.Row="1"
-            x:Uid="Main_Title"
-            Style="{StaticResource PageTitleStyle}" />
-        <Grid
-            Grid.Row="1" 
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.-->
-        </Grid>
     </Grid>
 </Page>

@@ -5,17 +5,18 @@
     xmlns:local="using:FluBase.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:contract7Present="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
-    
+    xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
+
     Background="{ThemeResource SystemControlAcrylicElementBrush}"
     BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
+    Windows10version1809:CornerRadius="{StaticResource FluentDialogCorners}"
     
     mc:Ignorable="d">
 
     <Grid>
-        <contract7Present:Grid.BackgroundTransition>
-            <contract7Present:BrushTransition />
-        </contract7Present:Grid.BackgroundTransition>
+        <Windows10version1809:Grid.BackgroundTransition>
+            <BrushTransition />
+        </Windows10version1809:Grid.BackgroundTransition>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -29,51 +30,50 @@
                     BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                     BorderThickness="0,0,0,1">
             <Button Style="{ThemeResource NavigationBackButtonNormalStyle}"
+                    Windows10version1809:CornerRadius="{ThemeResource FluentButtonCorners}"
                     Command="{x:Bind CloseDialogCommand}"/>
             <TextBlock x:Uid="About_Title"
                        Text="About"
                        Margin="12,0"
                        VerticalAlignment="Center"
-                       Style="{ThemeResource TitleTextBlockStyle}"
-                       FontWeight="Bold"/>
+                       Style="{ThemeResource FluentSubheaderTextStyle}"/>
         </StackPanel>
 
-        <!-- Title and close button -->
-        <RelativePanel Grid.Row="0"
-                       HorizontalAlignment="Stretch"
-                       Visibility="Collapsed"
-                       Padding="0,0,0,8"
-                       BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
-                       BorderThickness="0,0,0,1">
-            <TextBlock Text="About"
-                       FontWeight="Bold"
-                       Style="{ThemeResource TitleTextBlockStyle}"
-                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
-            <Button Content="&#xE106;"
-                    Background="Transparent"
-                    FontFamily="Segoe MDL2 Assets"
-                    Height="40"
-                    Width="40"
-                    RelativePanel.AlignRightWithPanel="True"
-                    Command="{x:Bind CloseDialogCommand}"/>
-        </RelativePanel>
-
-        
         <!-- Content -->
         <ScrollViewer Grid.Row="1">
             <StackPanel Padding="0,12,0,0">
                 <!-- App info -->
-                <StackPanel Margin="{StaticResource DialogCategoryMargin}">
-                    <!-- App Title -->
-                    <TextBlock Text="{x:Bind ViewModel.AppName}"
-                               Style="{ThemeResource SubtitleTextBlockStyle}"
-                               FontWeight="Bold"/>
-                    <!-- Version number -->
-                    <TextBlock Text="{x:Bind ViewModel.VersionNumber, Mode=OneWay}"
-                               Margin="0,0,0,4"
-                               Style="{ThemeResource CaptionTextBlockStyle}"/>
+                <StackPanel Margin="{ThemeResource DialogCategoryMargin}">
+                    <Grid Margin="{ThemeResource DialogTitleMargin}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0"
+                                   Grid.RowSpan="2"
+                                   Text="&#xE946;"
+                                   Style="{ThemeResource FluentTitleIconStyle}"/>
+                        <!-- App Title -->
+                        <TextBlock Grid.Column="1"
+                                   Grid.Row="0"
+                                   Text="{x:Bind ViewModel.AppName}"
+                                   Style="{ThemeResource FluentTitleTextStyle}"
+                                   FontWeight="SemiBold"/>
+                        <!-- Version number -->
+                        <TextBlock Grid.Column="1"
+                                   Grid.Row="1"
+                                   Text="{x:Bind ViewModel.VersionNumber, Mode=OneWay}"
+                                   Style="{ThemeResource CaptionTextBlockStyle}"/>
+                    </Grid>
+
                     <!-- About Description -->
-                    <TextBlock Text="FluBase, created and programmed by Ikarago, 2018-2019"
+                    <TextBlock Text="FluBase, created and programmed by Ikarago, 2019"
                                x:Uid="About_Description"
                                TextWrapping="Wrap"
                                Margin="{StaticResource XSmallTopMargin}"/>
@@ -81,26 +81,35 @@
 
 
                 <!-- Translators -->
-                <StackPanel Margin="{StaticResource DialogCategoryMargin}"
+                <StackPanel Margin="{ThemeResource DialogCategoryMargin}"
                             Visibility="Collapsed">
-                    <TextBlock x:Uid="About_TranslatorsTitle"
-                               Text="Translators"
-                               FontWeight="Bold"
-                               Margin="{StaticResource DialogSubtitleMargin}"
-                               Style="{StaticResource SubtitleTextBlockStyle}" />
+                    <StackPanel Orientation="Horizontal"
+                                Margin="{ThemeResource DialogTitleMargin}">
+                        <TextBlock Text="&#xE164;"
+                                   VerticalAlignment="Center"
+                                   Style="{ThemeResource FluentTitleIconStyle}"/>
+                        <TextBlock x:Uid="About_TranslatorsTitle"
+                                   Text="Translators"
+                                   Style="{ThemeResource FluentTitleTextStyle}"/>
+                    </StackPanel>
+
                     <TextBlock x:Uid="About_Translators"
                                Text="Sample text"
                                TextWrapping="Wrap"/>
                 </StackPanel>
 
-                
+
                 <!-- Acknowledgements -->
                 <StackPanel Margin="{StaticResource DialogCategoryMargin}">
-                    <TextBlock x:Uid="About_AcknowledgementsTitle"
-                               Text="Acknowledgements"
-                               FontWeight="Bold"
-                               Margin="{StaticResource DialogSubtitleMargin}"
-                               Style="{StaticResource SubtitleTextBlockStyle}" />
+                    <StackPanel Orientation="Horizontal"
+                                Margin="{ThemeResource DialogTitleMargin}">
+                        <TextBlock Text="&#xE134;"
+                                   Style="{ThemeResource FluentTitleIconStyle}" />
+                        <TextBlock x:Uid="About_AcknowledgementsTitle"
+                                   Text="Acknowledgements"                              
+                                   Style="{StaticResource FluentTitleTextStyle}" />
+                    </StackPanel>
+
                     <!-- Intro -->
                     <TextBlock x:Uid="About_AcknowledgementsIntro"
                                Text="This app makes use of code from the following projects:"
@@ -125,12 +134,17 @@
 
 
                 <!-- Links -->
-                <StackPanel Margin="{StaticResource DialogCategoryMargin}">
-                    <TextBlock x:Uid="About_LinksTitle"
-                               Text="Links"
-                               FontWeight="Bold"
-                               Margin="{StaticResource DialogSubtitleMargin}"
-                               Style="{StaticResource SubtitleTextBlockStyle}" />
+                <StackPanel Margin="{ThemeResource DialogCategoryMargin}">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="{ThemeResource DialogTitleMargin}">
+                        <TextBlock Text="&#xE71B;"
+                                   Style="{ThemeResource FluentTitleIconStyle}"/>
+                        <TextBlock x:Uid="About_LinksTitle"
+                                   Text="Links"
+                                   Style="{ThemeResource FluentTitleTextStyle}" />
+                    </StackPanel>
+
+
                     <!-- Privacy Policy -->
                     <HyperlinkButton x:Uid="About_PrivacyTermsLink"
                                      Content="Privacy Policy"/>
@@ -150,7 +164,7 @@
         <!-- Dialog background icon -->
         <Image x:Name="imgLogo"
                Grid.Row="1"
-               Source="/Assets/Logo/in-app/logo-white.png" 
+               Source="ms-appx:///Assets/Logo/in-app/logo-white.png" 
                Height="72"
                Width="72"
                Opacity="0.25"
@@ -160,7 +174,7 @@
 
         <FontIcon Grid.Row="1"
                   Canvas.ZIndex="5"
-                  Visibility="Visible"
+                  Visibility="Collapsed"
                   Glyph="&#xE946;"
                   FontSize="72"
                   Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"
